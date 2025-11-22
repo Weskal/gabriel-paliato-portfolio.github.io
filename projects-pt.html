@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="global-style.css">
+    <title>Projects</title>
+    <style>
+    .fade-out {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    body {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="navbar-ul">
+            <li class="navbar-element"><a href="index.html">Home</a></li>
+            <li class="navbar-element"><a href="about.html">About</a></li>
+            <li class="navbar-element"><a href="projects.html">Projects</a></li>
+            <li class="navbar-element"><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="lang-toggle">
+            <span id="lang-en" class="lang-label">EN</span>
+            <div id="lang-switch" class="lang-switch"></div>
+            <span id="lang-pt" class="lang-label">PT</span>
+        </div>
+    </nav>
+
+    <section class="projects">
+        <h1 class="page-title">Projetos</h1>
+
+        <div class="project-card">
+            <a href="https://github.com/seu-repo" target="_blank" class="project-title">
+                Automação de Ingestão de CSV (Python + IMAP + S3)
+            </a>
+            <p class="project-desc">
+                Este projeto automatiza o processo de captura de arquivos CSV enviados por e-mail e os centraliza em um bucket da Amazon S3.
+                O pipeline conecta-se a um servidor de e-mail IMAP, extrai e valida anexos CSV, processa-os usando bibliotecas Python como imaplib e email, e envia automaticamente os arquivos validados para o S3 com boto3.
+                O objetivo é otimizar a ingestão de dados e eliminar o manuseio manual de arquivos.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <a href="https://github.com/seu-repo" target="_blank" class="project-title">
+                BeanTracker (Node.js + React + MongoDB + Docker)
+            </a>
+            <p class="project-desc">
+                BeanTracker é uma aplicação full-stack desenvolvida para entusiastas de café registrarem, acompanharem e avaliarem grãos especiais.
+                O sistema possui backend em Node.js, frontend SPA em React e banco de dados MongoDB, tudo containerizado com Docker e implantado numa instância EC2 na AWS.
+                O projeto demonstra práticas modernas de desenvolvimento web, design de API, armazenamento persistente e fluxos de implantação com contêineres.
+            </p>
+        </div>
+        
+        <div class="project-card">
+            <a href="https://github.com/seu-repo" target="_blank" class="project-title">
+                Vexus Data Pipeline (Airflow + Python + SQL Server)
+            </a>
+            <p class="project-desc">
+                Este projeto implementa um pipeline de dados totalmente automatizado para uma loja de roupas fictícia chamada Vexus.
+                Scripts em Python geram dados sintéticos de pedidos de vendas e os enviam para o SQL Server, enquanto o Apache Airflow orquestra as etapas de extração, transformação e carga.
+                O pipeline demonstra automação ponta a ponta, agendamento, monitoramento e armazenamento de dados para cargas analíticas.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <a href="https://github.com/seu-repo" target="_blank" class="project-title">
+                CODVUNS — Sistema de Análise de Vulnerabilidades de Código (Projeto de TCC)
+            </a>
+            <p class="project-desc">
+                O CODVUNS é uma ferramenta de análise estática criada para detectar vulnerabilidades de segurança em código-fonte.
+                Ela combina correspondência de padrões (regex), inspeção de árvore sintática abstrata (AST) e, futuramente, aprendizado de máquina para identificar estruturas de código inseguras com alta precisão.
+                Desenvolvido como projeto de trabalho de conclusão de curso, o sistema automatiza a varredura de segurança e fornece avaliações consistentes e reproduzíveis da qualidade e do risco do código.
+            </p>
+        </div>
+
+                <!-- PROJETOS EM ANDAMENTO -->
+                <section class="ongoing-section">
+                    <h2 class="ongoing-title">Projetos em Andamento</h2>
+
+                    <!-- Projeto em andamento 1 -->
+                    <div class="ongoing-card">
+                        <h3 class="ongoing-project-title">
+                            Sistema de E-commerce Multistack
+                        </h3>
+                        <p class="ongoing-desc">
+                            Construção de uma arquitetura de microsserviços multilíngue para uma loja de roupas fictícia.
+                            O sistema integra APIs REST em Python, .NET e Spring Boot, com SQL Server e PostgreSQL como bancos de dados específicos de domínio.
+                            Inclui autenticação e autorização baseadas em token, com planos futuros para adicionar o Kafka para comunicação orientada a eventos e orquestração escalável.
+                        </p>
+                        <span class="ongoing-tag">Em andamento</span>
+                    </div>
+
+                    <!-- Projeto em andamento 2 -->
+                    <div class="ongoing-card">
+                        <h3 class="ongoing-project-title">
+                            Agente Analista de Dados com LLM — Python + SQL + LangChain
+                        </h3>
+                        <p class="ongoing-desc">
+                            Este projeto implementa um assistente de análise de dados que permite a usuários não técnicos consultarem bancos de dados SQL Server usando perguntas em linguagem natural. O sistema utiliza LangChain e OpenAI para:
+                            Compreender perguntas em linguagem natural (inglês/português);
+                            Gerar consultas SQL otimizadas com base no esquema do banco de dados;
+                            Executar as consultas no banco com validações de segurança;
+                            Analisar os resultados e criar uma resposta informativa sobre os dados.
+                        </p>
+                        <span class="ongoing-tag">Em andamento</span>
+                    </div>
+
+                </section>
+
+        <a href="https://github.com/Weskal" target="_blank" class="primary-btn" >
+               See All Projects
+            </a>
+    </section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

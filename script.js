@@ -35,3 +35,50 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const switchEl = document.getElementById("lang-switch");
+
+    // Lê idioma salvo
+    const savedLang = localStorage.getItem("lang"); // "pt" ou "en"
+
+    const currentPath = window.location.pathname;
+    const isPTPage = currentPath.includes("-pt");
+
+    // --- 1) Garante que o arquivo correto abra baseado no savedLang ---
+    if (savedLang === "pt" && !isPTPage) {
+        // EN -> PT automático
+        window.location.pathname = currentPath.replace(".html", "-pt.html");
+        return;
+    }
+
+    if (savedLang === "en" && isPTPage) {
+        // PT -> EN automático
+        window.location.pathname = currentPath.replace("-pt.html", ".html");
+        return;
+    }
+
+    // --- 2) Atualiza o estado visual do switch ---
+    if (isPTPage) {
+        switchEl.classList.add("active");
+    }
+
+    // --- 3) Troca idioma ao clicar ---
+    switchEl.addEventListener("click", () => {
+        const toPT = switchEl.classList.toggle("active");
+
+        let newPath;
+
+        if (toPT) {
+            localStorage.setItem("lang", "pt");
+            newPath = currentPath.replace(".html", "-pt.html");
+        } else {
+            localStorage.setItem("lang", "en");
+            newPath = currentPath.replace("-pt.html", ".html");
+        }
+
+        window.location.pathname = newPath;
+    });
+});
+
+

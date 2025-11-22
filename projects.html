@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="global-style.css">
     <title>Projects</title>
     <style>
     .fade-out {
@@ -29,6 +30,11 @@
             <li class="navbar-element"><a href="projects.html">Projects</a></li>
             <li class="navbar-element"><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="lang-toggle">
+            <span id="lang-en" class="lang-label">EN</span>
+            <div id="lang-switch" class="lang-switch"></div>
+            <span id="lang-pt" class="lang-label">PT</span>
+        </div>
     </nav>
 
     <section class="projects">
@@ -39,7 +45,7 @@
                 Automation CSV Ingestion (Python + IMAP + S3)
             </a>
             <p class="project-desc">
-                This project automates the process of capturing CSV files sent via email and centralizing them in an Amazon S3 data lake.
+                This project automates the process of capturing CSV files sent via email and centralizing them in an Amazon S3 bucket.
                 The pipeline connects to an IMAP email server, extracts and validates CSV attachments, processes them using Python libraries such as imaplib and email, and automatically uploads the validated files to S3 using boto3.
                 The goal is to streamline data ingestion and eliminate manual file handling.
             </p>
@@ -51,7 +57,7 @@
             </a>
             <p class="project-desc">
                 BeanTracker is a full-stack application designed for coffee enthusiasts to record, track, and evaluate specialty beans.
-                The system features a Node.js backend, a React SPA frontend, and a MongoDB database, all containerized with Docker and deployable to cloud environments.
+                The system features a Node.js backend, a React SPA frontend, and a MongoDB database, all containerized with Docker and deployed to EC2 instance in AWS environment.
                 The project showcases modern web development practices, API design, persistent storage, and containerized deployment workflows.
             </p>
         </div>
