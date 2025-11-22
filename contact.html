@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+    <title>Contact</title>
+    <style>
+    .fade-out {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    body {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="navbar-ul">
+            <li class="navbar-element"><a href="index.html">Home</a></li>
+            <li class="navbar-element"><a href="about.html">About</a></li>
+            <li class="navbar-element"><a href="projects.html">Projects</a></li>
+            <li class="navbar-element"><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="contact">
+
+        <h1 class="page-title">Contact</h1>
+
+        <p class="contact-subtitle">
+            Let’s talk about opportunities, collaborations, or freelance projects.
+        </p>
+
+        <div class="contact-buttons">
+
+            <a href="https://drive.google.com/file/d/1poo2F8sqWDoAvNbqXuxY9pTjXXTdC-Sz/view?usp=sharing" target="_blank" class="contact-btn primary-btn" > 
+               Download CV
+            </a>
+
+            <a href="mailto:gabrielpaliatow@gmail.com" class="contact-btn secondary-btn">
+                Send Email
+            </a>
+            
+            <a href="https://www.linkedin.com/in/gabriel-paliato-49467b211/" target="_blank" class="contact-btn secondary-btn">
+                LinkedIn <img src="imgs/in-logo.webp" alt="LinkedIn" style="width: 32px; height: 32px; opacity: 0.7;" >
+            </a>
+         
+            <a href="https://github.com/Weskal" target="_blank" class="contact-btn contact-btn-github secondary-btn">
+                GitHub <img src="imgs/github-logo.png" alt="LinkedIn" style="width: 21px; height: 21px;  opacity: 0.7;" >
+            </a>
+        </div>
+
+        <!-- OPTIONAL — Formspree (funciona sem backend) -->
+        <form action="https://formspree.io/f/xeodearv" method="POST" class="contact-form">
+
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="_replyto" placeholder="Your email" required>
+            <textarea name="message" placeholder="Your message..." rows="5" required></textarea>
+
+            <button type="submit" class="primary-btn form-btn">Send Message</button>
+        </form>
+
+    </section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

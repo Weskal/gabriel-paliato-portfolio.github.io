@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="projects.css">
+    <title>Projects</title>
+    <style>
+    .fade-out {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    body {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="navbar-ul">
+            <li class="navbar-element"><a href="index.html">Home</a></li>
+            <li class="navbar-element"><a href="about.html">About</a></li>
+            <li class="navbar-element"><a href="projects.html">Projects</a></li>
+            <li class="navbar-element"><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="projects">
+        <h1 class="page-title">Projects</h1>
+
+        <div class="project-card">
+            <a href="https://github.com/seu-repo" target="_blank" class="project-title">
+                Automation CSV Ingestion (Python + IMAP + S3)
+            </a>
+            <p class="project-desc">
+                This project automates the process of capturing CSV files sent via email and centralizing them in an Amazon S3 data lake.
+                The pipeline connects to an IMAP email server, extracts and validates CSV attachments, processes them using Python libraries such as imaplib and email, and automatically uploads the validated files to S3 using boto3.
+                The goal is to streamline data ingestion and eliminate manual file handling.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <a href="https://github.com/seu-repo" target="_blank" class="project-title">
+                BeanTracker (Node.js + React + MongoDB + Docker)
+            </a>
+            <p class="project-desc">
+                BeanTracker is a full-stack application designed for coffee enthusiasts to record, track, and evaluate specialty beans.
+                The system features a Node.js backend, a React SPA frontend, and a MongoDB database, all containerized with Docker and deployable to cloud environments.
+                The project showcases modern web development practices, API design, persistent storage, and containerized deployment workflows.
+            </p>
+        </div>
+        
+        <div class="project-card">
+            <a href="https://github.com/seu-repo" target="_blank" class="project-title">
+                Vexus Data Pipeline (Airflow + Python + SQL Server)
+            </a>
+            <p class="project-desc">
+                This project implements a fully automated data pipeline for a fictional clothing store called Vexus.
+                Python scripts generate synthetic sales order data and ingest it into SQL Server, while Apache Airflow orchestrates extraction, transformation, and loading workflows.
+                The pipeline demonstrates end-to-end automation, scheduling, monitoring, and data storage for analytical workloads.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <a href="https://github.com/seu-repo" target="_blank" class="project-title">
+                CODVUNS — Code Vulnerability Analysis System (TCC/End of Course Paper Project)
+            </a>
+            <p class="project-desc">
+                CODVUNS is a static analysis tool built to detect security vulnerabilities in source code.
+                It combines pattern-matching (regex), abstract syntax tree (AST) inspection, and soon will also be implemented machine learning to identify insecure code structures with high accuracy.
+                Developed as my final thesis project, the system automates security scanning and provides consistent, reproducible assessments of code quality and risk.
+            </p>
+        </div>
+
+
+        <!-- ONGOING PROJECTS -->
+        <section class="ongoing-section">
+            <h2 class="ongoing-title">Ongoing Projects</h2>
+
+            <!-- Projeto em andamento 1 -->
+            <div class="ongoing-card">
+                <h3 class="ongoing-project-title">
+                    Multistack Commerce System 
+                </h3>
+                <p class="ongoing-desc">
+                    Building a multi-language microservices architecture for a fictional clothing store.
+                    The system integrates REST APIs in Python, .NET, and Spring Boot, with SQL Server and PostgreSQL as domain-specific databases.
+                    Includes token-based authentication and authorization, with future plans to add Kafka for event-driven communication and scalable orchestration.
+                </p>
+                <span class="ongoing-tag">In Progress</span>
+            </div>
+
+            <!-- Projeto em andamento 3 -->
+            <div class="ongoing-card">
+                <h3 class="ongoing-project-title">
+                    LLM-Powered Data Analyst Agent — Python + SQL + LangChain
+                </h3>
+                <p class="ongoing-desc">
+                    This project implements a data analysis assistant that allows non-technical users to query SQL Server databases using natural language questions. The system leverages LangChain and OpenAI to:
+                    Understand questions in natural language (English/Portuguese);
+                    Generate optimized SQL queries based on the database schema;
+                    Execute queries in the database with security validations;
+                    Analyze results creating a insightful repsponse about the data.
+                </p>
+                <span class="ongoing-tag">In Progress</span>
+            </div>
+
+        </section>
+
+        <a href="https://github.com/Weskal" target="_blank" class="primary-btn" >
+               See All Projects
+            </a>
+    </section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
