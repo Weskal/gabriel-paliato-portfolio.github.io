@@ -15,9 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
     links.forEach(link => {
         const url = link.getAttribute("href");
 
-        // ignore anchors or external links
+        // ignore anchors, external links, mailto, tel
         if (
             url.startsWith("#") ||
+            url.startsWith("mailto:") ||  // ADICIONE ESTA LINHA
+            url.startsWith("tel:") ||     // ADICIONE ESTA LINHA (opcional)
             link.target === "_blank" ||
             url.startsWith("http")
         ) return;
