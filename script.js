@@ -18,15 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
         // ignore anchors, external links, mailto, tel
         if (
             url.startsWith("#") ||
-            url.startsWith("mailto:") ||  // ADICIONE ESTA LINHA
-            url.startsWith("tel:") ||     // ADICIONE ESTA LINHA (opcional)
+            url.startsWith("mailto:") ||
+            url.startsWith("tel:") ||
             link.target === "_blank" ||
             url.startsWith("http")
-        ) return;
+        ) return; // NÃO adiciona o event listener
 
+        // APENAS links internos chegam aqui
         link.addEventListener("click", e => {
             e.preventDefault();
-
             body.style.opacity = 0;
 
             setTimeout(() => {
