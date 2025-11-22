@@ -164,7 +164,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 1%; /* ajuste do rosto */
-    transform: scale(1.15);       /* menor = menos zoom */
+    object-position: 30% 65%; /* ajuste do rosto */
+    transform: scale(1);       /* menor = menos zoom */
 }
 
