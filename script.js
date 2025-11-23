@@ -38,43 +38,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const switchEl = document.getElementById("lang-switch");
+    if (!switchEl) return;
 
-    // Lê idioma salvo
-    const savedLang = localStorage.getItem("lang"); // "pt" ou "en"
+    const savedLang = localStorage.getItem("lang");
+    let currentPath = window.location.pathname;
+    
+    // ✅ Trata a raiz
+    if (currentPath.endsWith("/")) {
+        currentPath += "index.html";
+    }
 
-    const currentPath = window.location.pathname;
-    const isPTPage = currentPath.includes("-pt");
+    const isPTPage = currentPath.includes("-pt.html");
 
-    // --- 1) Garante que o arquivo correto abra baseado no savedLang ---
+    // --- Redirecionamento automático ---
     if (savedLang === "pt" && !isPTPage) {
-        // EN -> PT automático
-        window.location.pathname = currentPath.replace(".html", "-pt.html");
+        // Garante que adiciona -pt ANTES de .html
+        const newPath = currentPath.replace(/\.html$/, "-pt.html");
+        window.location.pathname = newPath;
         return;
     }
 
     if (savedLang === "en" && isPTPage) {
-        // PT -> EN automático
-        window.location.pathname = currentPath.replace("-pt.html", ".html");
+        // Remove -pt mantendo .html
+        const newPath = currentPath.replace(/-pt\.html$/, ".html");
+        window.location.pathname = newPath;
         return;
     }
 
-    // --- 2) Atualiza o estado visual do switch ---
+    // --- Visual ---
     if (isPTPage) {
         switchEl.classList.add("active");
     }
 
-    // --- 3) Troca idioma ao clicar ---
+    // --- Click ---
     switchEl.addEventListener("click", () => {
-        const toPT = switchEl.classList.toggle("active");
-
+        const goingToPT = !isPTPage; // ✅ Baseado no estado atual da página
         let newPath;
 
-        if (toPT) {
+        if (goingToPT) {
             localStorage.setItem("lang", "pt");
-            newPath = currentPath.replace(".html", "-pt.html");
+            newPath = currentPath.replace(/\.html$/, "-pt.html");
         } else {
             localStorage.setItem("lang", "en");
-            newPath = currentPath.replace("-pt.html", ".html");
+            newPath = currentPath.replace(/-pt\.html$/, ".html");
         }
 
         window.location.pathname = newPath;
